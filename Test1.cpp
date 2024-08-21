@@ -13,13 +13,11 @@
 #include <stdbool.h>
 #include <time.h>
 
-cnd_t cv;               // Condition variable used to signal that a thread has comleted its turn.
+cnd_t cv;               // Condition variable used to signal that a thread has completed its turn.
 mtx_t m;                // Mutex used by condition variable.
 
 int turn = 1;           // Indicates which thread has clearance to run at any one time.
 #define nThreads (4)    // Number of identical threads to create.
-
-char c;
 
 // Thread function run be each thread.
 void thread(int threadNumber)
